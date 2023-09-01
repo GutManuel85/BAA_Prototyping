@@ -1,0 +1,34 @@
+*********Node.js******************************
+# Node.js installieren
+# Node.js herunterladen unter https://nodejs.org/en/download/ und installieren
+
+*********Create APP and Setup style***********
+npm install -g @angular/cli         ::muss nur einmal gemacht werden, da global
+
+*********Angular App erstellen mit Routing und SCSS*********
+ng new app --no-strict
+cd ./app
+
+*********Bulma installieren*********
+npm install --save bulma
+# danach in angular-json unter Styles an erster Stelle hinzufügen: "node_modules/bulma/bulma.sass"
+# danach gemäss https://versions.bulma.io/0.7.0/documentation/overview/customize/ mystyles.scss ergänzen
+
+*********Angular material installieren mit Custom Theme*********
+ng add @angular/material
+
+*********Server Starten*********
+ng serve
+
+*********Create Component**********
+# zuerst neues Terminal öffnen und in app navigieren
+cd ./app
+ng generate component header       ::Shortcut ist ng g c header
+
+*******Add Routing Module after initial Setup*********
+cd ..
+ng generate module app-routing --flat --module=app
+
+*******Integrate Youtube Player ***********
+# https://www.angularjswiki.com/angular/how-to-embed-youtube-videos-in-angular-apps/
+npm install @angular/youtube-player --save

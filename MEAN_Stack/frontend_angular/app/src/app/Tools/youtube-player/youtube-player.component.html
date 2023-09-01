@@ -1,0 +1,17 @@
+<!--
+if startSecond is empty: it plays from beginning
+if endSecond is empty: it plays until the end
+if width or height is empty: it takes default values
+ -->
+
+<youtube-player
+  [videoId]="videoId"
+  suggestedQuality="default"
+  [startSeconds]="startSeconds"
+  [endSeconds]="endSeconds"
+  [width]="width"
+  [height]="height"
+>
+</youtube-player>
+
+<script src="https://www.youtube.com/iframe_api"></script>

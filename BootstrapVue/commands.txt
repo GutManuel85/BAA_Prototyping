@@ -1,0 +1,37 @@
+********** Create Project *********
+vue create my_bootstrap_vue
+#manually select features => <Einstellungen vornehmen>
+
+********** Kontrolle der Installation *********
+npm run serve
+# Server stoppen mit CTRL + C
+
+********** Install Bootstrap Vue *********
+# siehe hier: https://bootstrap-vue.org/docs
+
+cd my_bootstrap_vue
+
+npm install -s bootstrap-vue bootstrap
+
+# Anpassungen in verschiedenen Files gemäss:
+# - hier: https://bootstrap-vue.org/docs
+# - hier: https://bootstrap-vue.org/docs/reference/theming
+
+
+********** Server starten *********
+npm run serve
+
+
+$main-color: #AA336A; //#AA336A //#800080 //#407088 //#ffb3b3
+
+$primary: $main-color;
+
+$active-color: $main-color;
+
+$info: $main-color;
+
+$dark: #808080;
+
+$danger: #ffb3b3;
+
+

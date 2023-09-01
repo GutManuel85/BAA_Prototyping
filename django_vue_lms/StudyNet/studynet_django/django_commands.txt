@@ -1,0 +1,29 @@
+# Adding a new App:
+python manage.py startapp myapp
+
+# Adding models:
+python manage.py makemigrations
+
+# Update database
+python manage.py migrate
+
+# Create superuser
+python manage.py createsuperuser
+
+# Run server on http (not used in the current configuration) !!!
+python manage.py runserver
+
+# Run server on https (used in the current configuration)
+python manage.py runserver_plus --cert-file cert.pem --key-file key.pem
+
+# URL for Admin-Area in http: http://127.0.0.1:8000/admin/
+# URL for Admin-Area in http: https://127.0.0.1:8000/admin/
+
+# Has to be installed for uploading pictures: pillow
+python -m pip install Pillow
+
+# Markdown has to be installed for styling text from admin Area
+pip install markdown
+
+# Jazzmin for styling the admin panel
+pip install -U django-jazzmin

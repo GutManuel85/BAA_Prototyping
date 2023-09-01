@@ -1,0 +1,17 @@
+$check_width: 200px;
+
+#correct{
+  text-align: center;
+  padding: 10px;
+  color: white;
+  background: green;
+  width: $check_width;
+}
+
+#notCorrect{
+  text-align: center;
+  padding: 10px;
+  color: white;
+  background: red;
+  width: $check_width;
+}

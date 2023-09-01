@@ -1,0 +1,86 @@
+<div class="courses">
+  <app-header></app-header>
+  <app-title-area title="Courses"></app-title-area>
+  <section class="section">
+    <div class="container">
+      <div class="columns content">
+        <div class=" column is-2">
+          <aside class="menu">
+            <h4 class="menu-label">Categories</h4>
+            <div class="menu-list">
+              <a (click)="filterCoursesWithCategory('all categories')">All Categories</a>
+              <div *ngFor="let category of categories">
+                <a (click)="filterCoursesWithCategory(category.title)">{{category.title}}</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="column is-10">
+
+          <div class="field is-grouped">
+            <p class="control is-expanded">
+              <input class="input" type="text" id="search" name="search" placeholder="Search for your course"
+                     [(ngModel)]="mySearchString" (input)="filteredCourses()">
+            </p>
+          </div>
+
+          <hr>
+
+          <div class="columns is-multiline">
+
+            <div
+              class="column is-4"
+              *ngFor="let course of courses"
+            >
+              <div class="card">
+                <a routerLink=""></a>
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img [src]="course.get_image" alt="Picture">
+                  </figure>
+                </div>
+
+                <div class="card-content">
+                  <div class="media">
+                    <div id="card-title" class="media-content">
+                      <p class="card-text is-size-5">{{ course.title }}</p>
+                    </div>
+                  </div>
+
+                  <div class="content">
+                    <p class="card-text">{{ course.short_description }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="column is-12">
+              <nav class="pagination">
+                <a class="pagination-previous">Previous</a>
+                <a class="pagination-next">Next</a>
+
+                <ul class="pagination-list">
+                  <li>
+                    <a class="pagination-link is-current">1</a>
+                  </li>
+                  <li>
+                    <a class="pagination-link">2</a>
+                  </li>
+                  <li>
+                    <a class="pagination-link">3</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <app-footer></app-footer>
+</div>

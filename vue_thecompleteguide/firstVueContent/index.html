@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Vue.js</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<body id="app">
+<header>
+    <h1>Vue Dynamic Styling</h1>
+</header>
+<section id="styling">
+    <div
+            class="demo"
+            :style="{borderColor: boxASelected ? 'red' : 'darkslategrey'}"
+            @click="boxSelected('A')">  <!-- @click entspricht v-on:click -->
+        <div>
+        </div>
+        class="demo"
+        :style="{borderColor: boxBSelected ? 'red' : 'darkslategrey'}"
+        @click="boxSelected('B')">
+    </div>
+    <div
+            class="demo"
+            :style="{borderColor: boxCSelected ? 'red' : 'darkslategrey'}"
+            @click="boxSelected('C')">
+
+    </div>
+</section>
+</body>
+<script src="app.js"></script> <!--muss ganz unten sein-->
+</html>

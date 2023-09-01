@@ -1,0 +1,58 @@
+<div class="playground">
+  <app-header></app-header>
+  <app-title-area title="Drag & Drop"></app-title-area>
+  <section>
+    <br>
+    Link: https://material.angular.io/cdk/drag-drop/overview
+    <hr>
+
+    <h3 class="title is-4">Drag & Drop Basic</h3>
+
+    <div class="container columns is-variable is-3">
+
+      <div *ngFor="let person of persons">
+        <div cdkDrag id="person-card">
+          <div class="card ">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">{{person.name}}</p>
+                  <p class="subtitle is-6">@{{person.name}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="background"></div>
+
+    <hr>
+
+    <h3 class="title is-4">Drag & Drop Sorting</h3>
+
+    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let movie of moviesMixedUp" cdkDrag>{{movie}}</div>
+    </div>
+
+    <br>
+    <button *ngIf="!isSorted" mat-raised-button id="checkButton" color="primary" (click)="checkSorting()">Check Solution</button>
+    <br>
+    <app-result-check [isCorrect]="isSorted" [isChecked]="isChecked"></app-result-check>
+
+  </section>
+  <app-footer></app-footer>
+</div>

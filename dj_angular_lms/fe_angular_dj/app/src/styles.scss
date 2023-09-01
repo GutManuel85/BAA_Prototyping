@@ -1,0 +1,132 @@
+//*************** Angular Material Styling ********************
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$app-primary: mat.define-palette(mat.$pink-palette, 800, 200, 900 );
+$app-accent: mat.define-palette(mat.$amber-palette, 400, 200, 600);
+
+// The warn palette is optional (defaults to red).
+$app-warn: mat.define-palette(mat.$orange-palette, A700, 600, 900);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$app-theme: mat.define-light-theme((
+  color: (
+    primary: $app-primary,
+    accent: $app-accent,
+    warn: $app-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($app-theme);
+
+
+
+// ************* Bulma Styling ******************
+
+// 1. Import the initial variables
+@import "./node_modules/bulma/sass/utilities/initial-variables";
+@import "./node_modules/bulma/sass/utilities/functions";
+
+
+// 2. Set the main color as scss and as css variable to have access with java script
+
+// Have a look here:
+// https://forum.mendix.com/link/space/ui-&-front-end/questions/111682
+// https://github.com/sass/libsass/issues/2511
+// https://sass-lang.com/documentation/breaking-changes/css-vars
+
+$main-color: #AD1457; //#AD1457 = Primary Angular Material //#AA336A //#800080 //#407088 //#ffb3b3
+$main-color-invert: $white;
+
+#app{
+  --main-color: #{$main-color};
+  --main-color-invert: #{$main-color-invert};
+}
+
+
+// 3. Set your own initial variables
+
+
+$blue: #132743;
+$pink: #ffb3b3;
+$pink-invert: #fff;
+
+// Add a serif family
+//$family-serif: "Merriweather", "Georgia", serif;
+
+
+// 4. Set the derived variables
+
+$primary: $main-color;
+$primary-invert: white;
+
+$active-color: $main-color;
+$active-color-invert: white;
+
+$info: $main-color;
+
+$dark: #808080;
+
+$danger: $pink;
+
+
+.menu-list a.is-active {
+  color: $active-color-invert !important;
+  background: $active-color !important;
+}
+
+.pagination-link.is-current {
+  color: $active-color-invert !important;
+  background: $active-color !important;
+}
+
+
+// Use the new serif family
+//$family-primary: $family-serif;
+
+
+// 5. Setup your Custom Colors
+$linkedin: #0077b5;
+$linkedin-invert: findColorInvert($linkedin);
+$twitter: #55acee;
+$twitter-invert: findColorInvert($twitter);
+$github: #333;
+$github-invert: findColorInvert($github);
+
+// 6. Add new color variables to the color map.
+@import "./node_modules/bulma/sass/utilities/derived-variables";
+$addColors: (
+  "twitter":($twitter, $twitter-invert),
+  "linkedin": ($linkedin, $linkedin-invert),
+  "github": ($github, $github-invert)
+);
+$colors: map-merge($colors, $addColors);
+
+// 7. Import the rest of Bulma
+@import "./node_modules/bulma";
+
+// ************* General Styling ******************
+
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

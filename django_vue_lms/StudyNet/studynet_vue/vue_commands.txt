@@ -1,0 +1,22 @@
+# Install Vue CLI
+npm install -g @vue/cli
+
+# Install vuedraggable
+npm i -s vuedraggable@next
+
+
+# Install vue3-circle-progress: https://www.npmjs.com/package/vue3-circle-progress
+npm install --save vue3-circle-progress
+
+
+# Install markdown language: https://www.npmjs.com/package/remarkable
+# Syntax: https://www.markdownguide.org/cheat-sheet/
+npm install remarkable --save
+
+# Run vue app
+npm run serve
+
+# Run vue with https
+vue-cli-service serve --port 443
+
+
